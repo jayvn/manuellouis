@@ -49,6 +49,7 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* --- NAVIGATION STYLES --- */
 header nav ul {
     list-style: none;
     padding: 0;
@@ -77,6 +78,13 @@ header nav ul li a {
 header nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
+
+/* Active Navigation Link */
+header nav ul li a.active-nav {
+    background-color: rgba(255, 255, 255, 0.3); /* Highlight active link */
+    font-weight: bold;
+}
+/* --- END NAVIGATION STYLES --- */
 
 main {
     padding: 20px;
