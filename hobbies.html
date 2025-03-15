@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hobbies - Manuel Louis</title>
+    <title id="page-title">Hobbies - Manuel Louis</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,30 +14,36 @@
         <div class="profile-image">
             <img src="./images/profile.jpg" alt="Manuel Louis">
         </div>
-        <h1>Manuel Louis</h1>
-        <h2>Project Manager</h2>
+        <h1 id="name">Manuel Louis</h1>
+        <h2 id="title">Project Manager</h2>
         <nav>
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./projects.html">Projects</a></li>
-                <li><a href="./photography.html">Photography</a></li>
+                <li><a href="./index.html" id="nav-home">Home</a></li>
+                <li><a href="./projects.html" id="nav-projects">Projects</a></li>
+                <li><a href="./photography.html" id="nav-photography">Photography</a></li>
             </ul>
         </nav>
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('de')">DE</button>
+        </div>
     </header>
     <main>
         <section id="hobbies">
-            <h2>Hobbies</h2>
-            <p>In my free time, I enjoy:</p>
+            <h2 id="hobbies-title">Hobbies</h2>
+            <p id="hobbies-intro">In my free time, I enjoy:</p>
             <ul>
-                <li>Playing guitar</li>
-                <li>Hiking</li>
-                <li>Cooking</li>
-                <li>Reading</li>
+                <li id="hobby1">Playing guitar</li>
+                <li id="hobby2">Hiking</li>
+                <li id="hobby3">Cooking</li>
+                <li id="hobby4">Reading</li>
             </ul>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Manuel Louis</p>
+        <p id="copyright">&copy; 2025 Manuel Louis</p>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>

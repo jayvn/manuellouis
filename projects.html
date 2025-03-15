@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Manuel Louis</title>
+    <title id="page-title">Projects - Manuel Louis</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,42 +14,48 @@
         <div class="profile-image">
             <img src="./images/profile.jpg" alt="Manuel Louis">
         </div>
-        <h1>Manuel Louis</h1>
-        <h2>Project Manager</h2>
+        <h1 id="name">Manuel Louis</h1>
+        <h2 id="title">Project Manager</h2>
         <nav>
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./hobbies.html">Hobbies</a></li>
-                <li><a href="./photography.html">Photography</a></li>
+                <li><a href="./index.html" id="nav-home">Home</a></li>
+                <li><a href="./hobbies.html" id="nav-hobbies">Hobbies</a></li>
+                <li><a href="./photography.html" id="nav-photography">Photography</a></li>
             </ul>
         </nav>
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button onclick="changeLanguage('en')">EN</button>
+            <button onclick="changeLanguage('de')">DE</button>
+        </div>
     </header>
     <main>
         <section id="projects">
-            <h2>Projects</h2>
-            <p>A selection of projects demonstrating my diverse (and occasionally unbelievable) skillset:</p>
+            <h2 id="projects-title">Projects</h2>
+            <p id="projects-intro">A selection of projects demonstrating my diverse (and occasionally unbelievable) skillset:</p>
 
             <div class="project">
-                <h3>Project A: Squirrel-Pigeon Peace Treaty</h3>
-                <p class="project-date">March 2042 - April 2042</p>
-                <p>Successfully negotiated a lasting peace agreement between warring squirrel and pigeon factions in Central Park.  Mediated disputes over prime nut-gathering and breadcrumb-scavenging territories.  The breakthrough came with the introduction of cashew butter as a universally appreciated food source.  Result: 100% reduction in interspecies squabbles (and a lot of sticky beaks and paws).</p>
+                <h3 id="projectA-title">Project A: Squirrel-Pigeon Peace Treaty</h3>
+                <p class="project-date" id="projectA-date">March 2042 - April 2042</p>
+                <p id="projectA-desc">Successfully negotiated a lasting peace agreement between warring squirrel and pigeon factions in Central Park.  Mediated disputes over prime nut-gathering and breadcrumb-scavenging territories.  The breakthrough came with the introduction of cashew butter as a universally appreciated food source.  Result: 100% reduction in interspecies squabbles (and a lot of sticky beaks and paws).</p>
             </div>
 
             <div class="project">
-                <h3>Project B: Time-Traveling Toaster</h3>
-                <p class="project-date">January 2045 - Present</p>
-                <p>Developed a revolutionary toaster capable of retrieving bread from the past.  While technically a success (it *does* retrieve bread), the inherent limitations of temporal mechanics result in the bread always being stale upon arrival.  Currently seeking funding for a "freshness preservation field" to overcome this hurdle.  Potential applications include historical bread analysis and competitive toast-eating using only ancient grains.</p>
+                <h3 id="projectB-title">Project B: Time-Traveling Toaster</h3>
+                <p class="project-date" id="projectB-date">January 2045 - Present</p>
+                <p id="projectB-desc">Developed a revolutionary toaster capable of retrieving bread from the past.  While technically a success (it *does* retrieve bread), the inherent limitations of temporal mechanics result in the bread always being stale upon arrival.  Currently seeking funding for a "freshness preservation field" to overcome this hurdle.  Potential applications include historical bread analysis and competitive toast-eating using only ancient grains.</p>
             </div>
 
             <div class="project">
-                <h3>Project C: Hamster-Built Eiffel Tower</h3>
-                <p class="project-date">June 2044 - December 2044</p>
-                <p>Oversaw a team of 50 highly-trained (and surprisingly strong) hamsters in the construction of a 1:1000 scale replica of the Eiffel Tower, constructed entirely from toothpicks and non-toxic glue.  The project faced numerous challenges, including a toothpick shortage and a brief strike over working conditions (resolved with extra sunflower seeds).  The final structure is remarkably accurate and serves as a testament to the power of tiny teamwork.</p>
+                <h3 id="projectC-title">Project C: Hamster-Built Eiffel Tower</h3>
+                <p class="project-date" id="projectC-date">June 2044 - December 2044</p>
+                <p id="projectC-desc">Oversaw a team of 50 highly-trained (and surprisingly strong) hamsters in the construction of a 1:1000 scale replica of the Eiffel Tower, constructed entirely from toothpicks and non-toxic glue.  The project faced numerous challenges, including a toothpick shortage and a brief strike over working conditions (resolved with extra sunflower seeds).  The final structure is remarkably accurate and serves as a testament to the power of tiny teamwork.</p>
             </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Manuel Louis</p>
+        <p id="copyright">&copy; 2025 Manuel Louis</p>
     </footer>
+    <script src="./script.js"></script>
 </body>
 </html>
