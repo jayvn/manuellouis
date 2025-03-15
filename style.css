@@ -159,6 +159,25 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
+/* Project Section Styles */
+.project {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-left: 3px solid var(--header-bg-end);
+}
+
+.project h3 {
+    margin-bottom: 0.2em;
+    font-size: 1.2em;
+    color: var(--header-bg-end);
+}
+
+.project-date {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 0.5em;
+}
+
 @media (max-width: 768px) {
     .profile-image,
     header nav ul,
@@ -214,5 +233,9 @@ footer {
 
     h2 {
         font-size: 1.5em;
+    }
+    .project {
+        border-left: none;
+        padding-left: 0;
     }
 }
