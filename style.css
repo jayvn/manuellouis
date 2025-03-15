@@ -24,7 +24,8 @@ body {
 }
 
 header {
-    background-color: #36454f;
+    background-color: #36454f; /* Original background color */
+    background: linear-gradient(to right, #4CAF50, #2196F3); /* Added gradient */
     color: white;
     text-align: center;
     padding: 1em 0;
