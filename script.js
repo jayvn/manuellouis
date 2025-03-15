@@ -38,7 +38,9 @@ const translations = {
         hobby2: "Hiking",
         hobby3: "Cooking",
         hobby4: "Reading",
-        "photography-title": "Photography"
+        "photography-title": "Photography",
+        "photo1-desc": 'A vibrant, abstract nature shot with the word "Nature" overlaid.',
+        "photo2-desc": 'A close-up of lush green foliage, showcasing the beauty of small plants.'
     },
     de: {
         name: "Manuel Louis",
@@ -79,7 +81,52 @@ const translations = {
         hobby2: "Wandern",
         hobby3: "Kochen",
         hobby4: "Lesen",
-        "photography-title": "Fotografie"
+        "photography-title": "Fotografie",
+        "photo1-desc": 'Eine lebhafte, abstrakte Naturaufnahme mit dem überlagerten Wort "Natur".',
+        "photo2-desc": 'Eine Nahaufnahme von üppigem Grün, die die Schönheit kleiner Pflanzen zeigt.'
+    },
+    fr: {
+        name: "Manuel Louis",
+        title: "Chef de Projet",
+        "nav-home": "Accueil",
+        "nav-projects": "Projets",
+        "nav-hobbies": "Loisirs",
+        "nav-photography": "Photographie",
+        "about-title": "À propos de moi",
+        "about-text": "Je suis un chef de projet avec plus de 10 ans d'expérience dans la direction d'équipes interfonctionnelles pour mener à bien des projets.",
+        "portfolio-title": "Portfolio",
+        project1: "Projet 1 : Direction du développement d'une nouvelle application mobile.",
+        project2: "Projet 2 : Gestion de l'implémentation d'un nouveau système CRM.",
+        project3: "Projet 3 : Supervision du lancement d'une nouvelle campagne marketing.",
+        "contact-title": "Contact",
+        phone: "Téléphone : 555-123-4567",
+        "testimonials-title": "Témoignages",
+        "testimonial1-text": '"Meilleur professeur de français"',
+        "testimonial1-author": "- Jay",
+        "testimonial2-text": '"Le plus beau mec de tous les temps"',
+        "testimonial2-author": "- Mamie",
+        copyright: "&copy; 2025 Manuel Louis",
+        "page-title": "Projets - Manuel Louis", // For projects.html
+        "projects-intro": "Une sélection de projets démontrant mes compétences diverses (et parfois incroyables) :",
+        "projectA-title": "Projet A : Traité de paix écureuils-pigeons",
+        "projectA-date": "Mars 2042 - Avril 2042",
+        "projectA-desc": "Négociation réussie d'un accord de paix durable entre les factions belligérantes d'écureuils et de pigeons à Central Park.  Médiation des différends sur les territoires de collecte de noix et de récupération de miettes de pain.  La percée est venue avec l'introduction du beurre de cajou comme source de nourriture universellement appréciée.  Résultat : 100 % de réduction des querelles inter-espèces (et beaucoup de becs et de pattes collants).",
+        "projectB-title": "Projet B : Grille-pain voyageant dans le temps",
+        "projectB-date": "Janvier 2045 - Présent",
+        "projectB-desc": "Développement d'un grille-pain révolutionnaire capable de récupérer du pain du passé.  Bien que techniquement un succès (il *récupère* du pain), les limitations inhérentes à la mécanique temporelle font que le pain est toujours rassis à l'arrivée.  Recherche actuellement un financement pour un \"champ de conservation de la fraîcheur\" afin de surmonter cet obstacle.  Les applications potentielles incluent l'analyse historique du pain et la consommation de toasts en compétition en utilisant uniquement des grains anciens.",
+        "projectC-title": "Projet C : Tour Eiffel construite par des hamsters",
+        "projectC-date": "Juin 2044 - Décembre 2044",
+        "projectC-desc": "Supervision d'une équipe de 50 hamsters hautement entraînés (et étonnamment forts) dans la construction d'une réplique à l'échelle 1:1000 de la Tour Eiffel, entièrement construite à partir de cure-dents et de colle non toxique.  Le projet a fait face à de nombreux défis, notamment une pénurie de cure-dents et une brève grève concernant les conditions de travail (résolue avec des graines de tournesol supplémentaires).  La structure finale est remarquablement précise et témoigne de la puissance du travail d'équipe minuscule.",
+        "projects-title": "Projets",
+        "hobbies-title": "Loisirs",
+        "hobbies-intro": "Dans mon temps libre, j'aime :",
+        hobby1: "Jouer de la guitare",
+        hobby2: "Randonnée",
+        hobby3: "Cuisine",
+        hobby4: "Lecture",
+        "photography-title": "Photographie",
+        "photo1-desc": 'Un cliché de nature abstrait et vibrant avec le mot "Nature" en surimpression.',
+        "photo2-desc": "Un gros plan sur un feuillage vert luxuriant, mettant en valeur la beauté des petites plantes."
     }
 };
 
@@ -110,7 +157,7 @@ function setLanguage(lang) {
 document.addEventListener('DOMContentLoaded', function() {
     // Get the user's preferred language from localStorage or browser settings
     const userLang = localStorage.getItem('language') || navigator.language || navigator.userLanguage;
-    const initialLang = userLang.startsWith('de') ? 'de' : 'en';
+    const initialLang = userLang.startsWith('de') ? 'de' : (userLang.startsWith('fr') ? 'fr' : 'en');
 
     // Set the initial language
     setLanguage(initialLang);
@@ -128,8 +175,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Now include descriptions with the image filenames
             const imageFiles = [
-                { name: 'photo1.jpg', description: 'A vibrant, abstract nature shot with the word "Nature" overlaid.' },
-                { name: 'photo2.jpg', description: 'A close-up of lush green foliage, showcasing the beauty of small plants.' }
+                { name: 'photo1.jpg', description: 'photo1-desc' },
+                { name: 'photo2.jpg', description: 'photo2-desc' }
             ];
 
 
@@ -148,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     modal.style.display = "block";
                     modalImg.src = imageUrl;
                     modalImg.alt = imgElement.alt;
-                    descriptionPara.textContent = this.dataset.description; // Display the description
+                    descriptionPara.textContent = translations[initialLang][this.dataset.description]; // Display the description
                 });
             });
 
