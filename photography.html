@@ -33,6 +33,7 @@
              <div id="image-modal" class="modal">
                 <span class="close">&times;</span>
                 <img class="modal-content" id="modal-image">
+                <p id="image-description"></p> <!-- Added paragraph for description -->
             </div>
         </section>
     </main>
@@ -46,18 +47,23 @@
             const modal = document.getElementById('image-modal');
             const modalImg = document.getElementById('modal-image');
             const closeBtn = document.querySelector('.close');
+            const descriptionPara = document.getElementById('image-description'); // Get the description paragraph
 
-            // Instead of fetching and parsing HTML, we'll directly list the known image files.
-            const imageFiles = ['photo1.jpg', 'photo2.jpg'];
+            // Now include descriptions with the image filenames
+            const imageFiles = [
+                { name: 'photo1.jpg', description: 'A vibrant, abstract nature shot with the word "Nature" overlaid.' },
+                { name: 'photo2.jpg', description: 'A close-up of lush green foliage, showcasing the beauty of small plants.' }
+            ];
 
 
-            imageFiles.forEach(imageName => {
-                const imageUrl = imageDir + imageName;
+            imageFiles.forEach(imageData => {
+                const imageUrl = imageDir + imageData.name;
 
                 const imgElement = document.createElement('img');
                 imgElement.src = imageUrl;
                 imgElement.alt = 'Photography';
                 imgElement.classList.add('gallery-image');
+                imgElement.dataset.description = imageData.description; // Store description in data attribute
 
                 galleryDiv.appendChild(imgElement);
 
@@ -65,6 +71,7 @@
                     modal.style.display = "block";
                     modalImg.src = imageUrl;
                     modalImg.alt = imgElement.alt;
+                    descriptionPara.textContent = this.dataset.description; // Display the description
                 });
             });
 
@@ -112,6 +119,11 @@
             max-width: 80%;
             max-height: 80%;
             border-radius: 8px; /* Rounded corners for modal image */
+        }
+        #image-description {
+            color: white;
+            text-align: center;
+            margin-top: 10px;
         }
         .close {
             position: absolute;
