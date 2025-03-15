@@ -47,46 +47,36 @@
             const modalImg = document.getElementById('modal-image');
             const closeBtn = document.querySelector('.close');
 
-            fetch(imageDir)
-                .then(response => response.text())
-                .then(html => {
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    const links = Array.from(doc.querySelectorAll('a'));
-                    const imageFiles = links
-                        .map(link => link.href)
-                        .filter(href => href.match(/\.(jpe?g|png|gif)$/i));
+            // Instead of fetching and parsing HTML, we'll directly list the known image files.
+            const imageFiles = ['photo1.jpg', 'photo2.jpg'];
 
-                    imageFiles.forEach(image => {
-                        const imageName = image.split('/').pop();
-                        const imageUrl = imageDir + imageName;
 
-                        const imgElement = document.createElement('img'); // Directly create img element
-                        imgElement.src = imageUrl;
-                        imgElement.alt = 'Photography';
-                        imgElement.classList.add('gallery-image'); // Add class for styling
+            imageFiles.forEach(imageName => {
+                const imageUrl = imageDir + imageName;
 
-                        galleryDiv.appendChild(imgElement);
+                const imgElement = document.createElement('img');
+                imgElement.src = imageUrl;
+                imgElement.alt = 'Photography';
+                imgElement.classList.add('gallery-image');
 
-                        imgElement.addEventListener('click', function(event) {
-                            event.preventDefault();
-                            modal.style.display = "block";
-                            modalImg.src = imageUrl;
-                            modalImg.alt = imgElement.alt; // Copy alt text
-                        });
-                    });
+                galleryDiv.appendChild(imgElement);
 
-                    closeBtn.addEventListener('click', function() {
-                        modal.style.display = "none";
-                    });
+                imgElement.addEventListener('click', function() {
+                    modal.style.display = "block";
+                    modalImg.src = imageUrl;
+                    modalImg.alt = imgElement.alt;
+                });
+            });
 
-                    window.addEventListener('click', function(event) {
-                        if (event.target === modal) {
-                            modal.style.display = "none";
-                        }
-                    });
-                })
-                .catch(error => console.error('Error fetching images:', error));
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = "none";
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
         });
     </script>
     <style>
