@@ -86,6 +86,12 @@ const translations = {
 function changeLanguage(lang) {
     localStorage.setItem('language', lang); // Store the selected language
     setLanguage(lang);
+
+    // Add/remove active class from language buttons
+    document.querySelectorAll('.language-switcher button').forEach(btn => {
+        btn.classList.remove('active-language');
+    });
+    document.getElementById(lang + '-btn').classList.add('active-language');
 }
 
 function setLanguage(lang) {
@@ -104,13 +110,13 @@ function setLanguage(lang) {
 document.addEventListener('DOMContentLoaded', function() {
     // Get the user's preferred language from localStorage or browser settings
     const userLang = localStorage.getItem('language') || navigator.language || navigator.userLanguage;
+    const initialLang = userLang.startsWith('de') ? 'de' : 'en';
 
-    // Set the initial language based on preference or default to English
-    if (userLang.startsWith('de')) {
-        setLanguage('de');
-    } else {
-        setLanguage('en');
-    }
+    // Set the initial language
+    setLanguage(initialLang);
+
+    // Add active class to the initially selected language button
+    document.getElementById(initialLang + '-btn').classList.add('active-language');
 
       const galleryDiv = document.getElementById('image-gallery');
         if (galleryDiv) {

@@ -192,10 +192,16 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 1.2em; /* Increase font size for emojis */
 }
 
 .language-switcher button:hover {
     background-color: rgba(255, 255, 255, 0.4);
+}
+
+.language-switcher .active-language {
+    background-color: rgba(255, 255, 255, 0.4);
+    border: 2px solid white;
 }
 
 @media (max-width: 768px) {
