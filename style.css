@@ -1,9 +1,9 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More modern font */
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff;
-    color: #282c34;
+    background-color: #f5f7fa; /* Lighter background */
+    color: #333; /* Darker text for better contrast */
 }
 
 .profile-image {
@@ -13,7 +13,7 @@ body {
     overflow: hidden;
     margin: 20px auto;
     border: 3px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow */
 }
 
 .profile-image img {
@@ -24,14 +24,14 @@ body {
 }
 
 header {
-    background-color: #36454f; /* Original background color */
-    background: linear-gradient(to right, #4CAF50, #2196F3); /* Added gradient */
+    background: linear-gradient(to right, #4CAF50, #2196F3);
     color: white;
     text-align: center;
     padding: 1em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
 }
 
 header nav ul {
@@ -39,11 +39,10 @@ header nav ul {
     padding: 0;
     display: flex;
     margin-top: 10px;
-    /* Modern Navigation Styles */
-    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
-    border-radius: 25px; /* Rounded corners */
-    padding: 10px 20px; /* Add padding around the buttons */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header nav ul li {
@@ -53,65 +52,84 @@ header nav ul li {
 header nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 10px 15px; /* Add padding to the links to make them button-like */
-    border-radius: 20px; /* Rounded corners for the buttons */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-    display: block; /* Ensure the padding applies correctly */
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+    display: block;
 }
 
 header nav ul li a:hover {
-    text-decoration: none; /* Remove underline on hover */
-    background-color: rgba(255, 255, 255, 0.3); /* Lighter background on hover */
+    background-color: rgba(255, 255, 255, 0.3);
 }
-
 
 main {
     padding: 20px;
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Increased margin */
     background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 25px; /* Increased padding */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Hover effect */
+}
+
+section:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
 }
 
 .testimonial {
-    background-color: #f0f0f0;
-    padding: 15px;
-    border-radius: 5px;
-    margin: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #f8f9fa; /* Lighter background */
+    padding: 20px; /* Increased padding */
+    border-radius: 10px; /* More rounded corners */
+    margin: 15px 0; /* Increased margin */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #4CAF50; /* Accent border */
 }
 
 .testimonial .author {
     text-align: right;
     font-style: italic;
-    margin-top: 5px;
+    margin-top: 10px; /* Increased margin */
+    color: #555; /* Slightly darker color */
 }
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minmax */
+    gap: 25px; /* Increased gap */
 }
 
 .photo-grid img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease; /* Hover effect */
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 h1, h2 {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.75em; /* Adjusted margin */
+    color: #333; /* Consistent heading color */
+}
+
+h2 {
+    border-bottom: 2px solid #4CAF50; /* Underline for h2 */
+    padding-bottom: 5px;
+    display: inline-block; /* Keep underline tight to text */
 }
 
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0; /* Increased padding */
     background-color: #e0f2f7;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
 }
 
 @media (max-width: 768px) {
@@ -129,12 +147,13 @@ footer {
         flex-direction: column;
         align-items: center;
         margin-top: 5px;
-        background-color: transparent; /* Remove background on smaller screens */
-        box-shadow: none; /* Remove shadow on smaller screens */
+        background-color: transparent;
+        box-shadow: none;
     }
-     header nav ul li a{
+
+    header nav ul li a {
         border-radius: 0;
-     }
+    }
 
     header nav ul li {
         margin: 5px 0;
@@ -145,11 +164,15 @@ footer {
     }
 
     section {
-        padding: 10px;
+        padding: 15px; /* Reduced padding */
+        margin-bottom: 20px; /* Reduced margin */
     }
 
     .photo-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
+    }
+    .testimonial{
+        border-left: none;
     }
 }
